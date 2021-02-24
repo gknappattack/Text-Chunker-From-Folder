@@ -4,6 +4,7 @@ from os import listdir, mkdir
 from os.path import join, isfile
 from tkinter import filedialog as fd
 from tkinter import messagebox
+from shutil import copy
 
 
 class TextChunker:
@@ -30,6 +31,13 @@ class TextChunker:
             except FileExistsError:
                 return 2
 
+        all_chunks = "/all_chunks"
+        all_chunks_dir = self.output_folder + all_chunks
+
+        print(self.output_folder)
+        print(all_chunks_dir)
+        mkdir(all_chunks_dir)
+
         for f in self.only_files:
             # Get name of current speaker to create directory
             dir_name = f[0:-4]
@@ -44,7 +52,7 @@ class TextChunker:
             curr_file = open(join(self.filepath, f))
 
             # Remove punctuation from current file, send to array
-            file_data = curr_file.read().translate(self.remove)
+            file_data = curr_file.read()
             file_words = file_data.split()
 
             # Create new directory for speaker data
@@ -58,7 +66,7 @@ class TextChunker:
             word_end_index = words_per_chunk
 
             for i in range(0, self.chunk_count):
-                print("---Creating Chunk#" + str(i + 1))
+                print("---Creating Chunk #" + str(i + 1))
 
                 # Check if out of range for files that don't split evenly
                 if i == (self.chunk_count - 1):
@@ -81,6 +89,8 @@ class TextChunker:
                 chunk_file = open(chunk_file_name + ".txt", "w")
                 chunk_file.write(" ".join(curr_chunk))
                 chunk_file.close()
+
+                copy(chunk_file_name + ".txt", all_chunks_dir)
 
         return 0
 

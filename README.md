@@ -7,13 +7,16 @@ This program can be run with any Python3 installation.
 
 A sample run command is given below
 
-python main.py [1] [2]
-1: The relative path to the directory containing the text files to chunk
-2: Number of chunks to gbreak up a file into
+```python main.py [1] [2]```
+
+[1]: The relative path to the directory containing the text files to chunk
+[2]: Number of chunks to gbreak up a file into
+
 The TextChunker will give output in a folder called "output" in the same relative directory as the script and text files. For each text file parsed, a folder inside of the "output" folder will be generated and the chunked files will be found in there.
 
-For example, given the following folder structure and run command:
+For example, given the following folder structure
 
+```
 D:.
 |   main.py
 |   
@@ -23,9 +26,16 @@ D:.
 |   |   Abinadom.txt
 \
 
-python main.py "speakers\" 3
+```
+and run command:
+
+```python main.py "speakers\" 3
+
+```
+
 The expected output would result as follows:
 
+```
 D:.
 |   main.py
 |           
@@ -51,3 +61,4 @@ D:.
 |       |       Abinadom_3.txt
 |       \       
 \
+```

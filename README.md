@@ -29,9 +29,7 @@ D:.
 ```
 and run command:
 
-```python main.py "speakers\" 3
-
-```
+```python main.py "speakers\" ```
 
 The expected output would result as follows:
 

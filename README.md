@@ -1,6 +1,11 @@
-TextChunker
+#Text-Chunker-From-Folder
 
-Run Instructions
+
+## Overview
+
+Text-Chunker is a program to take a folder full of text files and split each file into a user-determined number of equal sized chunks and placed into their own sub-folders. This repo comes with the source code that can be run from the command line as well as an executable version of the program.
+
+##Usage
 This program can be run with any Python3 installation.
 
 2 inputs are required to run the program. One is a relative path to the file to be split up. The second is the number of files to break up each individual text file into.

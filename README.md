@@ -7,7 +7,7 @@ This program can be run with any Python3 installation.
 
 A sample run command is given below
 
-```python main.py [1] [2]```
+```python3 main.py [1] [2]```
 
 [1]: The relative path to the directory containing the text files to chunk
 [2]: Number of chunks to gbreak up a file into
@@ -29,7 +29,7 @@ D:.
 ```
 and run command:
 
-```python main.py "speakers\" ```
+```python3 main.py "speakers\" ```
 
 The expected output would result as follows:
 
